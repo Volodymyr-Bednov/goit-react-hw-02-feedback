@@ -65,13 +65,6 @@ export class App extends Component {
             )
           }
         />
-        {/* <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.state.total}
-          positivePercentage={this.state.positivePercentage}
-        /> */}
       </div>
     );
   }
