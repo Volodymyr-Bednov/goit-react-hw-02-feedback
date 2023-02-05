@@ -6,21 +6,37 @@ class Feedback extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
+    positivePercent: 0,
+    isVisible: true,
   };
 
   handlerGrade = evt => {
     if (evt.target.type !== 'button') return;
-    // console.log('fdffdfdf');
-    // console.log(this);
-    // console.dir(evt.target.value);
     const selectGrade = evt.target.value;
-
     this.setState(prevValue => {
       return {
         [selectGrade]: prevValue[selectGrade] + 1,
       };
     });
+    this.countTotalFeedback();
   };
+
+  countTotalFeedback = () => {
+    this.setState(prevValue => {
+      const { good, neutral, bad } = prevValue;
+      return { total: good + neutral + bad };
+    });
+    this.countPositiveFeedbackPercentage();
+  };
+
+  countPositiveFeedbackPercentage() {
+    this.setState(prevValue => {
+      const { good, total } = prevValue;
+      return { positivePercent: Math.round((good * 100) / total) };
+    });
+  }
+
   render() {
     return (
       <div>
@@ -45,6 +61,8 @@ class Feedback extends Component {
             <li>Good: {this.state.good}</li>
             <li>Neutral: {this.state.neutral}</li>
             <li>Bad: {this.state.bad}</li>
+            <li>Total: {this.state.total}</li>
+            <li>Positive feedback: {this.state.positivePercent}%</li>
           </ul>
         </div>
       </div>
