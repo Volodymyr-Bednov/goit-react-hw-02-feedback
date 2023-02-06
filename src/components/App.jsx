@@ -3,6 +3,7 @@ import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import css from './App.module.css';
 export class App extends Component {
   state = {
     good: 0,
@@ -42,7 +43,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.wrap}>
         <Section
           title={'Please leave feedback'}
           children={<FeedbackOptions onLeaveFeedback={this.LeaveFeedback} />}

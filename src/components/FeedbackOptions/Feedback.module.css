@@ -2,3 +2,13 @@
   display: flex;
   gap: 20px;
 }
+
+.btn {
+  padding: 4px 15px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+}
+
+.btn:active {
+  background-color: #3a56f3;
+}

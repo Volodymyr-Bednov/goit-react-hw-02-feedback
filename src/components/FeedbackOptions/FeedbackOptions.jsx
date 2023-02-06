@@ -4,15 +4,15 @@ export const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <div>
       <div className={css.grade} onClick={onLeaveFeedback}>
-        <button type="button" value="good">
+        <button className={css.btn} type="button" value="good">
           Good
         </button>
 
-        <button type="button" value="neutral">
+        <button className={css.btn} type="button" value="neutral">
           Neutral
         </button>
 
-        <button type="button" value="bad">
+        <button className={css.btn} type="button" value="bad">
           Bad
         </button>
       </div>
